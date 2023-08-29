@@ -3,7 +3,6 @@ import {
     FormControl,
     FormLabel,
     Input,
-    Checkbox,
     Stack,
     Button,
     Heading,
@@ -11,8 +10,6 @@ import {
     useColorModeValue,
 } from '@chakra-ui/react';
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getUser } from "../Redux/users/user.actions";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { BASE_URL } from "../constants/config";
@@ -29,7 +26,7 @@ export default function SignupPage() {
             name, email, password
         })
         let { message, status } = data.data
-        if (status == 1) {
+        if (status === 1) {
             alert(message)
             nav("/login")
         } else {

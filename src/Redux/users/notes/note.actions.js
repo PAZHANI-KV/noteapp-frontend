@@ -21,11 +21,11 @@ export const getNotes = () => async (dispatch) => {
 
         const { status, message, data } = res.data
         console.log(message)
-        if (status == 1) {
+        if (status === 1) {
 
             dispatch({ type: GET_NOTES_SUCCESS, payload: data })
 
-        } else if (status == 2) {
+        } else if (status === 2) {
 
             dispatch({ type: LOGOUT })
 
@@ -61,11 +61,11 @@ export const createNotes = (obj) => async (dispatch) => {
 
         const { status, message } = res.data
         console.log(message)
-        if (status == 1) {
+        if (status === 1) {
 
             dispatch({ type: CREATE_NOTES_SUCCESS })
             dispatch(getNotes())
-        } else if (status == 2) {
+        } else if (status === 2) {
 
             dispatch({ type: LOGOUT })
 
@@ -101,13 +101,13 @@ export const deleteNotes = (id) => async (dispatch) => {
 
         const { status, message } = res.data
         console.log(message)
-        if (status == 1) {
+        if (status === 1) {
 
             dispatch({ type: DELETE_NOTES_SUCCESS })
             dispatch(getNotes())
 
 
-        } else if (status == 2) {
+        } else if (status === 2) {
 
             dispatch({ type: LOGOUT })
 
@@ -145,13 +145,13 @@ export const updateNotes = (id, obj) => async (dispatch) => {
 
         const { status, message } = res.data
         console.log(message)
-        if (status == 1) {
+        if (status === 1) {
 
             dispatch({ type: UPDATE_NOTES_SUCCESS })
             dispatch(getNotes())
 
 
-        } else if (status == 2) {
+        } else if (status === 2) {
 
             dispatch({ type: LOGOUT })
 
