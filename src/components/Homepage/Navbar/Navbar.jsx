@@ -3,7 +3,7 @@ import {
     Box,
     Flex,
     Avatar,
-    Text,
+    Link,
     Button,
     Menu,
     MenuButton,
